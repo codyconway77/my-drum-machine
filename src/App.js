@@ -22,7 +22,13 @@ export class App extends React.Component {
     drumPad: sounds,
     display: ''
   }
-
+  handleClick = () => {
+    this.audio.play()
+    this.audio.currentTime = 0
+    this.setState({
+        display: this.props.id
+    })
+}
   render(){
     return (
       <div className="app">
@@ -34,6 +40,7 @@ export class App extends React.Component {
               id={s.id}
               letter={s.letter}
               src={s.src}
+              action={this.handleClick}
             />  
           ))}
         </div>
