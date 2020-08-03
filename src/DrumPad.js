@@ -5,7 +5,7 @@ export class DrumPad extends Component {
         document.addEventListener('keydown', this.handleKeyPress)
     }
     componentWillUnmount() {
-
+        document.removeEventListener('keydown', this.handleKeyPress)
     }
 
     handleClick = () => {
